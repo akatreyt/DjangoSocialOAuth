@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.contrib.auth import login
- 
+
 from social.apps.django_app.utils import psa
  
 from .tools import get_access_token
@@ -12,7 +12,7 @@ from .tools import get_access_token
 # sign in the user. Magic. Yeah.
 @psa('social:complete')
 def register_by_access_token(request, backend):
- 
+
     token = request.GET.get('access_token')
     # here comes the magic
     user = request.backend.do_auth(token)

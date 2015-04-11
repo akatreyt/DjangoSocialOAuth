@@ -5,10 +5,11 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'beerstash.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
+    url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^beers/', include('beers.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^users/', include('users.urls')),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+
 ]
